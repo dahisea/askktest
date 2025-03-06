@@ -28,7 +28,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install httpx uvloop numpy
+        pip install httpx uvloop 
     
     - name: Build
       run: |
