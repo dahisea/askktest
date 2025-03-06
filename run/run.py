@@ -5,6 +5,17 @@ import numpy as np
 
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
+
+
+
+
+
+
+
+
+
+
+
 # 预定义的 User-Agent 和 IP 列表
 user_agents = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -60,7 +71,6 @@ async def main():
     num_concurrent_requests = 5000  # 增加并发量
     download_method = "GET"
     no_response_needed = False
-    dependency_url = "http://example.com"  # 替换为实际的 URL
 
     download_stats = {
         'total_requests': 0,
