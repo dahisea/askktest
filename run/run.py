@@ -48,7 +48,7 @@ async def main():
     timeout=httpx.Timeout(timeout=30.0)
     async with httpx.AsyncClient(limits=limits,timeout=timeout) as client:
         queue=asyncio.Queue()
-        for _ in range(total_downloads):await queue.put(target_url)
+        for _ in range(total_downloads):await queue.put(dependency_url)
         tasks=[]
         for _ in range(num_concurrent_requests):tasks.append(asyncio.create_task(worker(client,queue,download_stats,download_method,no_response_needed)))
         await queue.join()
