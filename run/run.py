@@ -42,7 +42,7 @@ async def main():
     total_downloads=1000000
     num_concurrent_requests=10000
     download_method=random.choice(["GET","POST","PUT","HEAD"])
-    no_response_needed=True
+    no_response_needed=False
     download_stats={'total_requests':0,'total_responses':0,'non_200_responses':0,'failed_requests':0,'total_response_size':0}
     limits=httpx.Limits(max_keepalive_connections=100000,max_connections=100000)
     timeout=httpx.Timeout(timeout=30.0)
