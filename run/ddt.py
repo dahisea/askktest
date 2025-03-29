@@ -102,7 +102,7 @@ for i in range(num_worker_threads):
     threads.append(t)
 
 # 添加任务到队列 (1-99页)
-for page in range(1, 13000):
+for page in range(1, 130):
     task_queue.put(page)
 
 # 等待所有任务完成
