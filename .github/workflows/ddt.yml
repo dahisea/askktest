@@ -22,7 +22,8 @@ jobs:
     
     - name: Build
       run: |
-        python ${{ github.workspace }}/run/ddt.py
+        cd ${{ github.workspace }}/run
+        python ddt.py
     
     - name: Archive output
       run: |
