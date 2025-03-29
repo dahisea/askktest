@@ -2,10 +2,7 @@ name: Update
 
 on:
   watch:
-    types: [started]
-  schedule:
-    - cron: "45 * * * *"
-   
+    types: [started]   
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +25,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install httpx uvloop 
+        pip install pandas bs4 queue openpyxl
     
     - name: Build
       run: |
