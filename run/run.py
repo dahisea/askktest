@@ -66,9 +66,9 @@ async def worker(client, queue, stats, method, no_response):
 
 async def main():
     total_downloads = 1000000
-    num_concurrent_requests = 10000
+    num_concurrent_requests = 1000
     download_method = random.choice(["GET", "POST", "PUT", "HEAD"])
-    no_response_needed = False
+    no_response_needed = True
     download_stats = {
         'total_requests': 0,
         'total_responses': 0,
@@ -77,7 +77,7 @@ async def main():
         'total_response_size': 0
     }
     
-    limits = httpx.Limits(max_keepalive_connections=100000, max_connections=100000)
+    limits = httpx.Limits(max_keepalive_connections=10000, max_connections=100000)
     timeout = httpx.Timeout(timeout=30.0)
     
     async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:
